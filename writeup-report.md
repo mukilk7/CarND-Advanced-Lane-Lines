@@ -90,7 +90,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][pt1] ![alt text][pt2]
 
-####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 The code to identify the lane pixels and fit a polynomial to approximate the lane lines is in the IPython notebook located in "./solution.ipynb" in code cell titled "Lane Detection". The two main lane pixel identification functions are: slidingWindowLaneDetect() and targetedLaneDetect(). 
 
@@ -108,7 +108,7 @@ I then grab all the pixels found by the sliding window method for the left and r
 
 ![alt text][ld3]
 
-** Targeted Lane Detection **
+**Targeted Lane Detection**
 
 Once we have fitted lane lines for a given video frame image, we can perform a much targeted search for lane pixels around the previously identified lane lines as successive video frame images (for a sufficiently high frame rate) will likely be very similar. This is an optimization and also helps with reducing errors in lane detection between successive video frames. The code to do this is in the same cell in the "./solution.ipynb" IPython notebook under the targetedLaneDetect() function. Here the idea is to search around +/- 'M' pixels around the previously fitted lane lines for new lane pixels. The 'M' parameter is the search margin and I hand tuned it to an appropriate value. Once I have the lane pixels identified through this method, I then use OpenCV's polyfit method to get the new lane fits. Note that the function does some error correction which I will describe later in the Discussion section.
 
