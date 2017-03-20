@@ -66,13 +66,13 @@ In the code cell that defined the pipeline() function that contains the overall 
 
 ![alt text][ccal2]
 
-####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+#### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 The code to perform color and gradient thresholding is contained the in the IPython notebook located in "./solution.ipynb" in code cell under the title "Gradient and Color Thresholding". The overall pipeline() function first converts the image to HLS colorspace and uses S-Channel thresholding and Gradient thresholding in the X-direction to produce the binary image. This is in the code cell titled "Overall Pipeline" - please pay attention to combined_image calculation. I tried various other thresholding combinations and this was the one that worked best for me - the others were either too noisy or did not detect the lanes properly. The output of this can be seen below for a test image:
 
 ![alt text][thresh1] ![alt text][thresh2] ![alt text][thresh3] ![alt text][thresh4] ![alt text][thresh5] ![alt text][thresh6]
 
-####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+#### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 The code to do perspective transformation is in IPython notebook located in "./solution.ipynb" in code cell titled "Perspective Transformation". The code to obtain the perspective transformation matrix and its inverse is in the getPerspectiveTransformationMatrix() function. I manually found the source  points for the test_images/straight_lines2.jpg image corresponding to the left and right lane lines at the bottom and top of the image.
 
