@@ -74,7 +74,7 @@ The code to perform color and gradient thresholding is contained the in the IPyt
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code to do perspective transformation is in IPython notebook located in "./solution.ipynb" in code cell titled "Perspective Transformation". The code to obtain the perspective transformation matrix and its inverse is in the getPerspectiveTransformationMatrix() function. I manually found the source  points for the test_images/straight_lines2.jpg image corresponding to the left and right lane lines at the bottom and top of the image.
+The code to do perspective transformation is in IPython notebook located in "./solution.ipynb" in code cell titled "Perspective Transformation". The code to obtain the perspective transformation matrix and its inverse is in the getPerspectiveTransformationMatrix() function. Once I have the matrix, I simply call OpenCV's warpPerspective method to warp an image and get its top-down view. I manually found the source/destination  points for the test_images/straight_lines2.jpg image corresponding to the left and right lane lines at the bottom and top of the image.
 
 This resulted in the following source and destination points:
 
